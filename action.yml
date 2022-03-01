@@ -31,9 +31,11 @@ inputs:
 outputs:
   results:
     description: The error and warning messages for each one of the analyzed commits
+  formattedResults:
+    description: The human-readable error and warning messages for all commits
 runs:
   using: docker
-  image: docker://wagoid/commitlint-github-action:4.1.9
+  image: ./Dockerfile
 branding:
   icon: check-square
   color: blue

@@ -1,6 +1,7 @@
 import { setOutput } from '@actions/core'
 
 const resultsOutputId = 'results'
+const formattedResultsOutputId = 'formattedResults'
 
 const mapMessageValidation = (item) => item.message
 
@@ -15,10 +16,11 @@ const mapResultOutput = ({
   warnings: warnings.map(mapMessageValidation),
 })
 
-const generateOutputs = (lintedCommits) => {
+const generateOutputs = (lintedCommits, formattedResults) => {
   const resultsOutput = lintedCommits.map(mapResultOutput)
 
   setOutput(resultsOutputId, resultsOutput)
+  setOutput(formattedResultsOutputId, formattedResults)
 }
 
 export default generateOutputs

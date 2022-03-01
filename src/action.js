@@ -131,7 +131,7 @@ const showLintResults = async ([from, to]) => {
   )
   const formattedResults = formatErrors(lintedCommits, { config })
 
-  generateOutputs(lintedCommits)
+  generateOutputs(lintedCommits, formattedResults)
 
   if (hasOnlyWarnings(lintedCommits)) {
     handleOnlyWarnings(formattedResults)
