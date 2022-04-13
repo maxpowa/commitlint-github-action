@@ -8,4 +8,6 @@ else
   export NODE_PATH=$NODE_PATH:/node_modules
 fi
 
+git config --global safe.directory /github/workspace
+
 node /run.js
